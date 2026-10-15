@@ -1,0 +1,72 @@
+# =========================
+# IDEs & Editors
+# =========================
+.vs/
+.vscode/
+.idea/
+*.swp
+*.suo
+*.sln
+*.user
+CMakeSettings.json
+CMakeUserPresets.json
+
+# =========================
+# CMake & Build Artifacts
+# =========================
+build/
+build-*/
+out/
+bin/
+obj/
+x64/
+x86/
+*.dir/
+ninja_build/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+compile_commands.json
+
+# =========================
+# vcpkg Package Manager
+# =========================
+vcpkg_installed/
+vcpkg/
+.vcpkg-root
+
+# =========================
+# Compiled Binaries & Libs
+# =========================
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# =========================
+# Debug & Logs
+# =========================
+*.pdb
+*.ilk
+*.log
+
+# =========================
+# Doxygen Generated Docs
+# =========================
+docs/html/
+docs/latex/
+docs/rtf/
+docs/xml/
+
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+Thumbs.db
