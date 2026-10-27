@@ -3,6 +3,7 @@
     "name": "raylib-vector-shooter",
     "version": "0.1.0",
     "description": "A 2D top-down shooter game built with C++20 and Raylib. Uses vcpkg manifest mode for dependency management.",
+    "builtin-baseline": "866e9e258a76437074a5cf02d4c2d71b53bff2f8",
     "dependencies": [
         "raylib"
     ]
