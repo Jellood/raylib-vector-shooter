@@ -1,7 +1,7 @@
 # 🎯 Raylib Survival Shooter
 
 ![C++20](https://img.shields.io/badge/C%2B%2B-20-blue.svg?logo=c%2B%2B)
-![Raylib](https://img.shields.io/badge/Raylib-5.0-red.svg)
+![Raylib](https://img.shields.io/badge/Raylib-6.2-red.svg)
 ![CMake](https://img.shields.io/badge/CMake-3.20+-green.svg?logo=cmake)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)
 
@@ -27,7 +27,6 @@ As a learning initiative, this project emphasizes clean architecture and perform
 * **Framework:** [Raylib](https://www.raylib.com/) (Rendering, Input, Window management)
 * **Build System:** CMake
 * **Package Management:** vcpkg (Manifest Mode)
-* **Documentation:** Doxygen
 
 ## 🎮 Controls
 
@@ -40,34 +39,33 @@ As a learning initiative, this project emphasizes clean architecture and perform
 
 ### Prerequisites
 1. A C++20 compatible compiler (MSVC, GCC, or Clang).
-2. [CMake](https://cmake.org/download/) (v3.20 or newer).
-3. [vcpkg](https://vcpkg.io/en/getting-started.html) installed on your system.
+2. [CMake](https://cmake.org/download/) (v3.20 or newer) and [Ninja](https://ninja-build.org/).
+3. [vcpkg](https://vcpkg.io/en/getting-started.html) with the `VCPKG_ROOT` environment variable pointing to it.
+   (The vcpkg bundled with Visual Studio works too; use a *Developer PowerShell for VS*, which sets it automatically.)
 
 ### Build Instructions
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Jellood/raylib-shooter.git
-   cd raylib-shooter
-    ```
+   git clone https://github.com/Jellood/raylib-vector-shooter.git
+   cd raylib-vector-shooter
+   ```
 
-2. **Configure the project with CMake:**
-    Point CMake to your local vcpkg toolchain file. Because this project uses `vcpkg.json` manifest mode, dependencies will be downloaded and built automatically.
-    ```bash
-    cmake -B build -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="[path/to/your/vcpkg]/scripts/buildsystems/vcpkg.cmake"
-    ```
-    *(Replace `[path/to/your/vcpkg]` with your actual vcpkg installation path).*
+2. **Configure** (dependencies from `vcpkg.json` are downloaded and built automatically on first run):
+   ```bash
+   cmake --preset release
+   ```
 
-3. **Build the game:**
-    ```bash
-    cmake --build build --config Release
-    ```
+3. **Build:**
+   ```bash
+   cmake --build --preset release
+   ```
 
-4. **Run the executable:**
-    * **Windows:** `build\Release\ShooterApp.exe`
-    * **Linux / macOS:** `./build/ShooterApp`
+4. **Run:**
+   * **Windows:** `out\build\release\raylib-vector-shooter.exe`
+   * **Linux / macOS:** `./out/build/release/raylib-vector-shooter`
 
-
+For a debug build, use `--preset debug` instead.
 
 ## 📁 Architecture Overview
 
@@ -85,6 +83,7 @@ As a learning initiative, this project emphasizes clean architecture and perform
 │   └── Renderer.cpp      
 ├── .gitignore            # Untracked files to ignore
 ├── CMakeLists.txt        # Universal build configuration
+├── CMakePresets.json     # Debug / Release build presets
 ├── README.md             # Project documentation
 └── vcpkg.json            # Dependency manifest (Raylib)
 ```
